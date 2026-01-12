@@ -1,15 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const TermsOfService = () => {
+const TermsOfServiceApp = () => {
   return (
-    <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white  px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8">
-          Terms & Conditions
-        </h1>
-
-        <div className="space-y-8 text-gray-700">
-          <p className="text-gray-600 mb-6">
+        <div className="space-y-4 text-gray-700">
+           <p className="leading-relaxed text-sm text-gray-500 mt-4">
             <strong>Effective Date:</strong> 17 October 2025
           </p>
 
@@ -78,7 +74,7 @@ const TermsOfService = () => {
               <li>
                 Use of DoraDrink is subject to our{' '}
                 <a
-                  href="/privacy-policy"
+                  href="/privacy-policy-app"
                   className="text-blue-400 hover:underline font-medium underline"
                 >
                   Privacy Policy
@@ -190,7 +186,7 @@ const TermsOfService = () => {
 
           <div>
             <h2 className="text-lg font-bold text-gray-800 mb-4 tracking-wider ">18. Contact Us</h2>
-            <p>
+            <p className="mb-4">
               If you have any questions about these Terms, please contact us:<br />
               <strong>Email:</strong>{' '}
               <a href="mailto:support@doradrink.com" className="text-blue-600 hover:underline">
@@ -203,7 +199,7 @@ const TermsOfService = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default TermsOfService;
+export default TermsOfServiceApp

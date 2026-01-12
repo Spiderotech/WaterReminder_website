@@ -2,6 +2,9 @@ import React from 'react';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import homeImage from '../assets/splash1.png'; // Replace with the correct path to your image
 
+const APP_STORE_URL = "https://apps.apple.com/app/id6752671109";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.doradrinkwaterreminderapp";
+
 const DownloadSection = () => {
   return (
     <section id="download" className="bg-white py-8 lg:py-16 px-6 ">
@@ -15,7 +18,9 @@ const DownloadSection = () => {
           </h2>
 
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-            <div className="flex mt-3 w-48 h-14 bg-black text-white rounded-xl items-center justify-center hover:bg-gray-800 transition cursor-pointer">
+            <div
+              onClick={() => window.open(APP_STORE_URL, "_blank")}
+              className="flex mt-3 w-48 h-14 bg-black text-white rounded-xl items-center justify-center hover:bg-gray-800 transition cursor-pointer">
               <div className="mr-3">
                 <svg viewBox="0 0 384 512" width="30">
                   <path
@@ -31,7 +36,9 @@ const DownloadSection = () => {
             </div>
 
             {/* Google Play Button */}
-            <div className="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center hover:bg-gray-800 transition cursor-pointer">
+            <div
+              onClick={() => window.open(PLAY_STORE_URL, "_blank")}
+              className="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center hover:bg-gray-800 transition cursor-pointer">
               <div className="mr-3">
                 <svg viewBox="30 336.7 120.9 129.2" width="30">
                   <path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z" />
@@ -48,7 +55,7 @@ const DownloadSection = () => {
           </div>
 
           <p className="mt-6 text-gray-700 max-w-sm">
-           Join thousands of users who are improving their health, one sip at a time.
+            Join thousands of users who are improving their health, one sip at a time.
           </p>
         </div>
 
@@ -59,7 +66,7 @@ const DownloadSection = () => {
             alt="Mobile App"
             className="w-[300px] sm:w-[180px] md:w-[220px] lg:w-[260px] drop-shadow-2xl"
           />
-          
+
         </div>
       </div>
     </section>

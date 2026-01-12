@@ -14,7 +14,7 @@ const SimpleHeader = () => {
             <span className="sr-only">Home</span>
             <img src={logoImg} alt="DoraDrink Logo" className="h-8 w-auto" />
             <span className="text-lg font-bold text-gray-900">
-              Dora Drink
+              DoraDrink
             </span>
           </a>
 

@@ -7,7 +7,7 @@ const blogPosts = [
   subtitle: 'The surprising role of water in maintaining health and vitality as we age.',
   category: 'WELLNESS',
   date: 'Sep 20, 2025',
-  author: 'Dora Drink Team',
+  author: 'DoraDrink Team',
   excerpt:
     'As we get older, our sense of thirst can diminish, making it easier to become dehydrated without realizing it. Proper hydration is crucial for seniors to maintain energy levels, support cognitive function, and prevent common health issues like urinary tract infections and kidney stones. This article explores why consistent water intake is a key component of healthy aging and how a simple tool like a water reminder app can be a game-changer for daily routines.',
   size: 'large', // Custom size for the main card

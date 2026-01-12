@@ -12,7 +12,7 @@ const Header = () => {
     { name: "Features", to: "features" },
     { name: "About", to: "about" },
     { name: "Download", to: "download" },
-    { name: "Faq", to: "faq" },
+    { name: "FAQ", to: "faq" },
     { name: "Contact", to: "contact" },
     { name: "Blogs", to: "blogs" },
   ];
@@ -25,7 +25,7 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-2">
               <img src={logoImg} alt="Logo" className="h-8 w-auto" />
-              <span className="text-xl font-bold text-gray-900">Dora Drink</span>
+              <span className="text-xl font-bold text-gray-900">DoraDrink</span>
             </a>
           </div>
 

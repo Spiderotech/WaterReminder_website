@@ -1,35 +1,76 @@
 import React from "react";
 
 const faqs = [
+  // General
   {
-    question: "How does Dora Drink calculate my water goal?",
-    answer:
-      "Dora Drink uses your personal information like age, weight, and activity level, along with local weather data, to recommend a daily hydration goal. You can always adjust this number to fit your personal needs.",
+    question: "What is DoraDrink?",
+    answer: "DoraDrink is a hydration tracking app designed to help you monitor and improve your daily water intake.",
   },
   {
-    question: "Can I get reminders on my smart watch?",
-    answer:
-      "Yes! Dora Drink supports notifications on most smartwatches, making it easy to get a quick nudge to drink water, even when your phone isn't in hand.",
+    question: "How does DoraDrink work?",
+    answer: "You log your water intake and DoraDrink tracks your progress toward your daily hydration goal.",
   },
   {
-    question: "What if I forget to log a drink?",
-    answer:
-      "No problem at all. You can easily add, edit, or delete a log entry at any time to keep your daily tracking accurate. Just tap the plus button and adjust the time and amount.",
-  },
- {
-    question: "How do I add a new cup size?",
-    answer:
-      "You can add custom cup sizes in the app's home screen. This allows you to quickly log your water intake with just a tap, making the process faster and more accurate for you.",
+    question: "Is DoraDrink's tracking accurate?",
+    answer: "DoraDrink offers accurate tracking based on your input and recommended intake goals.",
   },
   {
-    question: "Why is staying hydrated so important?",
-    answer:
-      "Proper hydration is vital for maintaining energy levels, supporting cognitive function, and improving overall physical health. It's the simplest way to take care of your body from the inside out.",
+    question: "Is DoraDrink free to use?",
+    answer: "Yes, DoraDrink is free with optional premium features in the future.",
   },
   {
-    question: "Can I customize my reminder schedule?",
-    answer:
-      "Yes, you can. While the app provides intelligent reminders based on your routine, you can also set specific times or intervals for reminders that work best for your lifestyle.",
+    question: "Can I export my DoraDrink data?",
+    answer: "This feature will be available soon in settings.",
+  },
+
+  // Account
+  {
+    question: "How do I update my personal data?",
+    answer: "Go to Settings > Personal Information to update your age, weight, height, and other details.",
+  },
+  {
+    question: "Can I reset my account data?",
+    answer: "Yes, you can reset all your data from Settings > Reset Data. This will erase all your water intake, reminders, and preferences.",
+  },
+  {
+    question: "How do I change my password?",
+    answer: "Currently, DoraDrink does not require an account or password. All data is stored locally on your device.",
+  },
+  {
+    question: "Is my data private?",
+    answer: "Yes, your data is stored locally and is not shared with anyone. Please see our Privacy Policy for more details.",
+  },
+
+  // Services
+  {
+    question: "Does DoraDrink send reminders?",
+    answer: "Yes, DoraDrink can send you hydration reminders based on your schedule. You can customize reminders in Settings > Reminder Settings.",
+  },
+  {
+    question: "How do I contact support?",
+    answer: "Go to Settings > Contact Support to reach out to our team via email.",
+  },
+  {
+    question: "Is there a premium version?",
+    answer: "All core features are free. Premium features may be introduced in the future.",
+  },
+
+  // Help
+  {
+    question: "The app crashes when I open it.",
+    answer: "Please try reinstalling the app. If the issue persists, contact Support.",
+  },
+  {
+    question: "I can't log my water intake.",
+    answer: "Make sure you have the latest version of DoraDrink. If the problem continues, contact Support.",
+  },
+  {
+    question: "Reminders are not working.",
+    answer: "Check your notification settings and ensure DoraDrink has permission to send notifications.",
+  },
+  {
+    question: "The app is slow or unresponsive.",
+    answer: "Try clearing the app cache or reinstalling DoraDrink. If issues persist, contact Support.",
   },
 ];
 
@@ -39,7 +80,7 @@ const FAQSection = () => {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
         <p className="text-lg text-gray-600 mb-12">
-          Stuck on something? We're here to help you get the most out of Dora Drink.
+          Have questions about DoraDrink? Find answers here!
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">

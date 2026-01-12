@@ -1,5 +1,5 @@
 import React from "react";
-import centerApp from "../assets/splash2.png";
+import centerApp from "../assets/splash2.png"; 
 import leftApp from "../assets/onbord1.png";
 import rightApp from "../assets/onbord1.png";
 import farLeftApp from "../assets/onbording.png";
@@ -15,7 +15,7 @@ const Features = () => {
              Personalized Reminders to Keep You Hydrated
           </h2>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Dora Drink learns your daily routine to send smart, personalized reminders. Stay on track with your hydration goals and build healthy habits without even thinking about it.
+            DoraDrink learns your daily routine to send smart, personalized reminders. Stay on track with your hydration goals and build healthy habits without even thinking about it.
             
           </p>
         </div>
@@ -60,7 +60,7 @@ const Features = () => {
             Track Your Progress & Celebrate Milestones
           </h2>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Track your daily intake, view historical data, and see your hydration streak grow over time. With Dora Drink, you can easily see how far you've come and celebrate every drop you've tracked.
+            Track your daily intake, view historical data, and see your hydration streak grow over time. With DoraDrink, you can easily see how far you've come and celebrate every drop you've tracked.
           </p>
         </div>
       </div>

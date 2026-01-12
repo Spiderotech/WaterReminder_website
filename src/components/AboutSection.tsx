@@ -14,7 +14,7 @@ const AboutSection = () => {
             Making Hydration a <br className="hidden sm:block" /> Happy and Healthy Habit
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-            Dora Drink was founded to help people lead healthier lives by making hydration effortless. Our smart reminders and intuitive tracking tools are designed to fit seamlessly into your day, ensuring you never forget to drink water and can easily see the positive impact it has on your well-being.
+            DoraDrink was founded to help people lead healthier lives by making hydration effortless. Our smart reminders and intuitive tracking tools are designed to fit seamlessly into your day, ensuring you never forget to drink water and can easily see the positive impact it has on your well-being.
           </p>
           {/* Feature List */}
           <div className="space-y-6">

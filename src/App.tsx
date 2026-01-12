@@ -18,6 +18,9 @@ import DownloadAppSection from "./components/DownloadAppSection";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsAndConditions from "./components/TermsOfService";
 
+import PrivacyPolicyApp from "./components/PrivacyPolicyApp";
+import TermsOfServiceApp from "./components/TermsOfServiceApp";
+
 // Wrapper to decide which header to show
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
@@ -38,34 +41,44 @@ const App = () => {
   return (
     <Router>
       <div className="font-sans text-gray-800">
-        <Layout>
-          <Routes>
-            {/* Home */}
-            <Route
-              path="/"
-              element={
-                <>
-                  <Home />
-                  <Features />
-                  <FeaturesSection />
-                  <AboutSection />
-                  <DownloadSection />
-                  <FAQSection />
-                  <ContactUsSection />
-                  <BlogSection />
-                  <DownloadAppSection />
-                </>
-              }
-            />
+        <Routes>
+          {/* Normal Layout */}
+          <Route
+            path="/*"
+            element={
+              <Layout>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <>
+                        <Home />
+                        <Features />
+                        <FeaturesSection />
+                        <AboutSection />
+                        <DownloadSection />
+                        <FAQSection />
+                        <ContactUsSection />
+                        <BlogSection />
+                        <DownloadAppSection />
+                      </>
+                    }
+                  />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+                </Routes>
+              </Layout>
+            }
+          />
 
-            {/* Legal Pages */}
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          </Routes>
-        </Layout>
+          {/* ⚡ App-only Pages (NO Layout, no header/footer) */}
+          <Route path="/privacy-policy-app" element={<PrivacyPolicyApp />} />
+          <Route path="/terms-and-conditions-app" element={<TermsOfServiceApp />} />
+        </Routes>
       </div>
     </Router>
   );
 };
+
 
 export default App;

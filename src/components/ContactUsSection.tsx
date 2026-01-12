@@ -13,72 +13,12 @@ const ContactUsSection = () => {
             Contact Us
           </h2>
           <p className="text-gray-600 text-lg mb-8 max-w-md">
-            Have questions about Dora Drink? We're here to help. Contact us via email or social media.
+            Have questions about DoraDrink? We're here to help. Contact us via email or social media.
           </p>
 
           <div className="mb-8">
-            <p className="text-gray-900 text-lg font-semibold mb-2">support@doradrink.com</p>
-            <p className="text-gray-900 text-lg font-semibold mb-2">321-221-231</p>
-            
+            <p className="text-gray-900 text-lg font-semibold mb-2">support@doradrink.com</p> 
           </div>
-
-          <ul className="mt-12 flex gap-6 md:gap-8">
-            <li>
-              <a
-                href="#"
-                rel="noreferrer"
-                target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75"
-              >
-                <span className="sr-only">Facebook</span>
-                <FaFacebook className="size-6" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                rel="noreferrer"
-                target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75"
-              >
-                <span className="sr-only">Instagram</span>
-                <FaInstagram className="size-6" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                rel="noreferrer"
-                target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75"
-              >
-                <span className="sr-only">Twitter</span>
-                <FaTwitter className="size-6" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                rel="noreferrer"
-                target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75"
-              >
-                <span className="sr-only">GitHub</span>
-                <FaGithub className="size-6" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                rel="noreferrer"
-                target="_blank"
-                className="text-gray-700 transition hover:text-gray-700/75"
-              >
-                <span className="sr-only">Dribbble</span>
-                <FaDribbble className="size-6" />
-              </a>
-            </li>
-          </ul>
         </div>
 
         {/* Right Column: Contact Form */}
@@ -146,7 +86,7 @@ const ContactUsSection = () => {
                   className="block appearance-none w-auto py-2 pl-3 pr-1 border border-gray-300 rounded-l-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
                 >
                   <option>+62</option>
-                  <option>+1</option>
+                  <option>+91</option>
                   <option>+44</option>
                 </select>
                 <input

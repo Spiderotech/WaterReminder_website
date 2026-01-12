@@ -1,6 +1,9 @@
 import React from 'react'
 import homeImage from '../assets/splash1.png';
 
+const APP_STORE_URL = "https://apps.apple.com/app/id6752671109";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.doradrinkwaterreminderapp";
+
 const Home = () => {
     return (
         <section id='home' className="bg-white lg:grid lg:h-screen lg:place-content-center">
@@ -26,13 +29,15 @@ const Home = () => {
                         That Feel Great
                     </h1>
                     <p className="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
-                        Meet Dora Drink, your new favorite way to stay hydrated. Get smart, personalized reminders throughout the day to meet your water intake goals. Track your progress, earn achievements, and feel the difference that proper hydration makes on your energy, focus, and overall well-being.
+                        Meet DoraDrink, your new favorite way to stay hydrated. Get smart, personalized reminders throughout the day to meet your water intake goals. Track your progress, earn achievements, and feel the difference that proper hydration makes on your energy, focus, and overall well-being.
                     </p>
 
                     {/* Buttons */}
                     <div className="mt-4 flex gap-4 sm:mt-6">
                         {/* App Store */}
-                        <div className="flex mt-3 w-48 h-14 bg-black text-white rounded-xl items-center justify-center cursor-pointer hover:bg-gray-800 transition">
+                        <div
+                            onClick={() => window.open(APP_STORE_URL, "_blank")}
+                            className="flex mt-3 w-48 h-14 bg-black text-white rounded-xl items-center justify-center cursor-pointer hover:bg-gray-800 transition">
                             <div className="mr-3">
                                 <svg viewBox="0 0 384 512" width="30" className="text-white group-hover:text-gray-300 transition">
                                     <path
@@ -48,7 +53,9 @@ const Home = () => {
                         </div>
 
                         {/* Google Play */}
-                        <div className="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center cursor-pointer hover:bg-gray-800 transition">
+                        <div
+                            onClick={() => window.open(PLAY_STORE_URL, "_blank")}
+                            className="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center cursor-pointer hover:bg-gray-800 transition">
                             <div className="mr-3">
                                 <svg viewBox="30 336.7 120.9 129.2" width="30" className="group-hover:opacity-80 transition">
                                     <path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z" />

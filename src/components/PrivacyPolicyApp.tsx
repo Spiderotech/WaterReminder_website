@@ -1,18 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-const PrivacyPolicy = () => {
+const PrivacyPolicyApp = () => {
   return (
-    <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white  px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8">
-          Privacy Policy
-        </h1>
-
-        <div className="space-y-8 text-gray-700">
-          <p className="leading-relaxed text-sm text-gray-500">
+        <div className="space-y-2 text-gray-700">
+          <p className="leading-relaxed text-sm text-gray-500 mt-4">
             <strong>Effective Date:</strong> 17 October 2025
           </p>
-
           <p className="leading-relaxed">
             <strong>Spidero Technology</strong> (“we,” “our,” “us”) built <strong>DoraDrink</strong> (“the App”) to help users stay hydrated by providing customizable reminders and tracking daily water intake. This Privacy Policy explains how DoraDrink handles your information, including the personal data you provide, the device permissions we request, and your rights under UK data protection law.
           </p>
@@ -190,7 +185,7 @@ const PrivacyPolicy = () => {
           {/* 16. Contact Us */}
           <div>
             <h2 className="text-lg font-bold text-gray-800 mb-4 tracking-wider ">16. Contact Us</h2>
-            <p className="leading-relaxed ">
+            <p className="leading-relaxed">
               If you have any questions, please contact us:<br />
               <strong>Email: </strong><a href="mailto:support@doradrink.com" className="text-blue-600 underline">support@doradrink.com</a><br />
               <strong>Company: </strong>Spidero Technology
@@ -199,7 +194,7 @@ const PrivacyPolicy = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default PrivacyPolicy;
+export default PrivacyPolicyApp
