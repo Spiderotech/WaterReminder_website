@@ -1,68 +1,159 @@
-import React from "react";
-import aboutimg from "../assets/about.png";
+import homeImg from "../assets/home.png";
+import profileImg from "../assets/profile.png";
+import splashImg from "../assets/splash2.png";
+import {
+  FaArrowRight,
+  FaBell,
+  FaChartLine,
+  FaCrown,
+  FaDroplet,
+  FaStar,
+  FaUsers,
+} from "react-icons/fa6";
+
+const missionCards = [
+  {
+    icon: <FaBell />,
+    title: "Smart Reminders",
+    copy: "Personalized alerts that fit your routine and help you never miss a sip.",
+    color: "bg-blue-600 text-white",
+  },
+  {
+    icon: <FaChartLine />,
+    title: "Progress Tracking",
+    copy: "Track your daily, weekly & monthly progress with beautiful insights.",
+    color: "bg-teal-500 text-white",
+  },
+];
+
+const stats = [
+  { icon: <FaUsers />, value: "25K+", label: "Happy Users", color: "bg-blue-50 text-blue-600" },
+  { icon: <FaStar />, value: "4.9", label: "App Rating", color: "bg-violet-50 text-violet-600" },
+  { icon: <FaDroplet />, value: "1M+", label: "Cups Tracked", color: "bg-teal-50 text-teal-500" },
+];
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-white py-16 px-4 sm:px-6 lg:px-8 flex justify-center items-center">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Column - Content */}
-        <div className="flex flex-col items-start p-8 bg-gray-50 rounded-3xl shadow-lg h-full">
-          <span className="text-white bg-blue-600 px-3 py-1 rounded-full text-sm font-semibold mb-4">
-            OUR MISSION
+    <section id="about" className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-sky-50/70 to-white" />
+
+      <div className="relative mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto max-w-xl lg:mx-0">
+          <span className="inline-flex items-center gap-2.5 rounded-full bg-blue-50 px-4 py-2 text-xs font-extrabold uppercase tracking-wide text-blue-700 ring-1 ring-blue-100">
+            <FaDroplet className="text-base" />
+            Our Mission
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-            Making Hydration a <br className="hidden sm:block" /> Happy and Healthy Habit
+
+          <h2 className="mt-7 text-3xl font-black leading-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            Building Better Habits,{" "}
+            <span className="text-blue-600">One Sip</span> at a Time.
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-            DoraDrink was founded to help people lead healthier lives by making hydration effortless. Our smart reminders and intuitive tracking tools are designed to fit seamlessly into your day, ensuring you never forget to drink water and can easily see the positive impact it has on your well-being.
+
+          <div className="mt-5 h-1.5 w-16 rounded-full bg-[repeating-linear-gradient(90deg,#60a5fa_0_10px,transparent_10px_15px)]" />
+
+          <p className="mt-6 max-w-lg text-base leading-7 text-slate-700">
+            DoraDrink is more than a water tracker. It's your daily companion to
+            help you stay hydrated, energized, and in control of your health.
           </p>
-          {/* Feature List */}
-          <div className="space-y-6">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 bg-blue-600 p-3 rounded-xl mr-4 text-white">
-                {/* Replaced FaClock with inline SVG */}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                  <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clipRule="evenodd" />
-                </svg>
+
+          <div className="mt-6 space-y-3">
+            {missionCards.map((item) => (
+              <div
+                key={item.title}
+                className="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-xl shadow-blue-900/5 ring-1 ring-blue-50"
+              >
+                <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-xl text-xl shadow-lg ${item.color}`}>
+                  {item.icon}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-base font-extrabold text-slate-950">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-5 text-slate-600">{item.copy}</p>
+                </div>
+                <span className="hidden h-9 w-9 shrink-0 place-items-center rounded-full border border-blue-100 text-sm text-blue-500 sm:grid">
+                  <FaArrowRight />
+                </span>
               </div>
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-                  Intelligent Reminders
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 mt-1">
-                  Get personalized notifications to drink water based on your daily schedule and goals.
-                </p>
+            ))}
+          </div>
+
+          <div className="mt-5 grid gap-3 rounded-2xl bg-white p-4 shadow-xl shadow-blue-900/5 ring-1 ring-blue-50 sm:grid-cols-3">
+            {stats.map((item, index) => (
+              <div
+                key={item.label}
+                className={`flex items-center gap-3 ${index > 0 ? "sm:border-l sm:border-slate-200 sm:pl-4" : ""}`}
+              >
+                <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-full text-lg ${item.color}`}>
+                  {item.icon}
+                </span>
+                <div>
+                  <strong className="block text-xl font-black text-slate-950">{item.value}</strong>
+                  <span className="text-xs font-medium text-slate-600">{item.label}</span>
+                </div>
               </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 bg-blue-600 p-3 rounded-xl mr-4 text-white">
-                {/* Replaced FaChartBar with inline SVG */}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                  <path d="M11.47 3.84a.75.75 0 10-1.06 1.06l3.894 3.893a.75.75 0 001.06 0l3.894-3.893a.75.75 0 10-1.06-1.06l-3.368 3.369-3.369-3.37zM4.58 11.47a.75.75 0 001.06 0l3.894-3.893a.75.75 0 10-1.06-1.06L3.52 10.41a.75.75 0 000 1.06l5.96 5.96a.75.75 0 001.06 0l1.06-1.06a.75.75 0 00-1.06-1.06l-4.755 4.756-2.5-2.5zM12 20.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z" />
-                  <path fillRule="evenodd" d="M3.75 14.25a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-                  Effortless Progress Tracking
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 mt-1">
-                  Visually track your daily, weekly, and monthly hydration progress.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-        {/* Right Column - Image */}
-        <div className="relative h-full w-full">
+
+        <div className="relative mx-auto h-[430px] w-full max-w-2xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-50 via-white to-sky-100 shadow-2xl shadow-blue-900/10 ring-1 ring-blue-50 sm:h-[500px] lg:h-[560px]">
+          <div className="absolute left-[24%] top-[10%] h-[25rem] w-[25rem] rounded-full bg-blue-200/60" />
+          <div className="absolute left-7 top-8 grid grid-cols-4 gap-2.5 opacity-35">
+            {Array.from({ length: 16 }).map((_, index) => (
+              <span key={index} className="h-1.5 w-1.5 rounded-full bg-slate-500" />
+            ))}
+          </div>
+
+          <div className="absolute right-5 top-8 z-30 flex rotate-[-6deg] items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-xl shadow-blue-900/10">
+            <FaCrown className="text-2xl text-amber-400" />
+            <div>
+              <strong className="block text-xs font-black text-slate-950">7 Day Streak</strong>
+              <span className="text-[11px] font-medium text-slate-500">Amazing! Keep it up!</span>
+            </div>
+            <FaArrowRight className="text-[10px] text-slate-300" />
+          </div>
+
+          <div className="absolute bottom-7 left-7 h-32 w-32 rounded-t-full bg-teal-400/40 blur-sm" />
+          <div className="absolute bottom-7 left-16 h-28 w-24 rounded-t-full bg-teal-500/35 blur-sm" />
+          <div className="absolute bottom-7 right-8 h-16 w-16 rounded-full bg-white/80 shadow-inner" />
+          <div className="absolute bottom-14 right-20 h-8 w-8 rounded-full border border-blue-200 bg-white/70" />
+
           <img
-            src={aboutimg}
-            alt="Person drinking water"
-            className="rounded-3xl object-cover w-full h-full min-h-[400px] shadow-lg"
+            src={homeImg}
+            alt="DoraDrink hydration dashboard"
+            className="absolute bottom-16 left-[14%] z-10 h-[300px] rotate-[-8deg] object-contain drop-shadow-[0_24px_32px_rgba(15,23,42,0.22)] sm:h-[370px] lg:h-[420px]"
           />
+          <img
+            src={profileImg}
+            alt="DoraDrink profile hydration goal"
+            className="absolute bottom-16 right-[10%] z-10 h-[300px] rotate-[10deg] object-contain drop-shadow-[0_24px_32px_rgba(15,23,42,0.2)] sm:h-[370px] lg:h-[415px]"
+          />
+          <img
+            src={splashImg}
+            alt="DoraDrink welcome screen"
+            className="absolute bottom-16 left-1/2 z-20 h-[335px] -translate-x-1/2 object-contain drop-shadow-[0_28px_38px_rgba(15,23,42,0.26)] sm:h-[430px] lg:h-[475px]"
+          />
+
+          <div className="absolute bottom-6 left-1/2 z-30 w-60 -translate-x-1/2 rounded-2xl bg-slate-950 px-4 py-3 text-white shadow-2xl shadow-slate-900/25 sm:w-72">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <span className="text-[11px] font-semibold text-blue-100">Hydration Score</span>
+                <strong className="mt-1.5 block text-xl font-black">Excellent</strong>
+              </div>
+              <span className="text-xs font-bold text-emerald-400">↑ 18%</span>
+            </div>
+            <div className="mt-3 flex h-5 items-end gap-1.5">
+              {[8, 14, 9, 16, 11, 18, 12, 21].map((height, index) => (
+                <span key={index} className="w-full rounded-full bg-cyan-400" style={{ height }} />
+              ))}
+            </div>
+          </div>
+
+          <span className="absolute right-8 top-[35%] h-12 w-12 rounded-full border-2 border-dashed border-blue-300" />
+          <span className="absolute left-16 top-[24%] h-3 w-11 rotate-45 rounded-full bg-blue-500" />
+          <span className="absolute left-24 top-[22%] h-3 w-11 rotate-[75deg] rounded-full bg-blue-200" />
         </div>
       </div>
     </section>
   );
 };
+
 export default AboutSection;

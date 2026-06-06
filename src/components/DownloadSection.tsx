@@ -1,72 +1,169 @@
-import React from 'react';
-import { FaApple, FaGooglePlay } from 'react-icons/fa';
-import homeImage from '../assets/splash1.png'; // Replace with the correct path to your image
+import splashImage from "../assets/splash2.png";
+import {
+  FaApple,
+  FaBell,
+  FaChartColumn,
+  FaGooglePlay,
+  FaStar,
+} from "react-icons/fa6";
+import { IoWater } from "react-icons/io5";
+import { FaBullseye } from "react-icons/fa";
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6752671109";
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.doradrinkwaterreminderapp";
 
+const highlights = [
+  {
+    icon: <FaBell />,
+    title: "Smart Reminders",
+    copy: "Never miss a sip",
+    color: "bg-blue-50 text-blue-600",
+  },
+  {
+    icon: <FaBullseye />,
+    title: "Personalized Goals",
+    copy: "Tailored to you",
+    color: "bg-emerald-50 text-emerald-600",
+  },
+  {
+    icon: <FaChartColumn />,
+    title: "Track Progress",
+    copy: "See how you improve",
+    color: "bg-violet-50 text-violet-600",
+  },
+];
+
+const openStore = (url: string) => window.open(url, "_blank", "noopener,noreferrer");
+
 const DownloadSection = () => {
   return (
-    <section id="download" className="bg-white py-8 lg:py-16 px-6 ">
-      <div className="max-w-7xl mx-auto rounded-3xl bg-gray-100 p-5 md:p-10 flex flex-col lg:flex-row items-center justify-between">
-        {/* Left Content */}
-        <div className="text-left w-full lg:w-1/2 mb-10 lg:mb-0">
-          <p className="text-gray-600 text-lg mb-2">Ready to stay hydrated?</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-            Download <br />
-            Mobile App
-          </h2>
+    <section id="download" className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-50 via-white to-blue-50 p-6 shadow-2xl shadow-blue-900/5 ring-1 ring-blue-50 sm:p-10 lg:p-16">
+        <div className="pointer-events-none absolute right-20 top-20 h-[28rem] w-[28rem] rounded-full bg-blue-100/80" />
+        <div className="pointer-events-none absolute right-56 top-56 grid grid-cols-5 gap-3 opacity-30">
+          {Array.from({ length: 25 }).map((_, index) => (
+            <span key={index} className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+          ))}
+        </div>
 
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-            <div
-              onClick={() => window.open(APP_STORE_URL, "_blank")}
-              className="flex mt-3 w-48 h-14 bg-black text-white rounded-xl items-center justify-center hover:bg-gray-800 transition cursor-pointer">
-              <div className="mr-3">
-                <svg viewBox="0 0 384 512" width="30">
-                  <path
-                    fill="currentColor"
-                    d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <div className="text-xs group-hover:text-blue-600 transition">Download on the</div>
-                <div className="text-2xl font-semibold font-sans -mt-1 group-hover:text-blue-600 transition">App Store</div>
-              </div>
+        <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-3 rounded-full bg-blue-50 px-4 py-2 text-sm font-extrabold uppercase tracking-wide text-blue-700 ring-1 ring-blue-100">
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-blue-500 shadow-sm">
+                <IoWater />
+              </span>
+              Stay hydrated, stay healthy
+            </span>
+
+            <h2 className="mt-8 text-4xl font-black leading-tight text-slate-950 sm:text-5xl lg:text-6xl">
+              Your Daily Hydration Partner{" "}
+              <span className="text-blue-600">in Your Pocket</span>
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
+              DoraDrink helps you build better hydration habits with smart
+              reminders, goal tracking, and progress insights. Drink more water,
+              feel better, live healthier.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <button
+                onClick={() => openStore(APP_STORE_URL)}
+                className="flex h-14 w-56 items-center justify-center gap-3 rounded-lg bg-black text-white shadow-lg transition hover:bg-slate-800"
+              >
+                <FaApple className="text-3xl" />
+                <span className="text-left leading-none">
+                  <span className="block text-xs">Download on the</span>
+                  <span className="block text-2xl font-semibold">App Store</span>
+                </span>
+              </button>
+
+              <button
+                onClick={() => openStore(PLAY_STORE_URL)}
+                className="flex h-14 w-56 items-center justify-center gap-3 rounded-lg bg-black text-white shadow-lg transition hover:bg-slate-800"
+              >
+                <FaGooglePlay className="text-2xl text-emerald-400" />
+                <span className="text-left leading-none">
+                  <span className="block text-xs uppercase">Get it on</span>
+                  <span className="block text-xl font-semibold">Google Play</span>
+                </span>
+              </button>
             </div>
 
-            {/* Google Play Button */}
-            <div
-              onClick={() => window.open(PLAY_STORE_URL, "_blank")}
-              className="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center hover:bg-gray-800 transition cursor-pointer">
-              <div className="mr-3">
-                <svg viewBox="30 336.7 120.9 129.2" width="30">
-                  <path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z" />
-                  <path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z" />
-                  <path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z" />
-                  <path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z" />
-                </svg>
+            <div className="mt-9 grid gap-5 sm:grid-cols-3">
+              {highlights.map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`flex items-center gap-4 ${index > 0 ? "sm:border-l sm:border-slate-200 sm:pl-6" : ""}`}
+                >
+                  <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full text-2xl ${item.color}`}>
+                    {item.icon}
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-black text-slate-950">{item.title}</h3>
+                    <p className="mt-1 text-sm text-slate-600">{item.copy}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-col gap-5 rounded-3xl bg-white/90 p-5 shadow-xl shadow-blue-900/5 ring-1 ring-blue-50 sm:flex-row sm:items-center">
+              <div className="flex -space-x-3">
+                {["AM", "RJ", "SK"].map((initials, index) => (
+                  <span
+                    key={initials}
+                    className={`grid h-12 w-12 place-items-center rounded-full border-2 border-white text-sm font-bold text-white ${
+                      index === 0 ? "bg-slate-700" : index === 1 ? "bg-blue-500" : "bg-cyan-500"
+                    }`}
+                  >
+                    {initials}
+                  </span>
+                ))}
+                <span className="grid h-12 w-12 place-items-center rounded-full border-2 border-white bg-blue-600 text-sm font-bold text-white">
+                  25K+
+                </span>
               </div>
+
+              <div className="hidden h-12 w-px bg-slate-200 sm:block" />
+
               <div>
-                <div className="text-xs group-hover:text-blue-600 transition">GET IT ON</div>
-                <div className="text-xl font-semibold font-sans -mt-1 group-hover:text-blue-600 transition">Google Play</div>
+                <div className="flex gap-1 text-amber-400">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <FaStar key={index} />
+                  ))}
+                </div>
+                <p className="mt-2 text-sm font-medium text-slate-600">
+                  Trusted by 25,000+ happy users worldwide
+                </p>
               </div>
             </div>
           </div>
 
-          <p className="mt-6 text-gray-700 max-w-sm">
-            Join thousands of users who are improving their health, one sip at a time.
-          </p>
-        </div>
+          <div className="relative mx-auto h-[520px] w-full max-w-xl">
+            <div className="absolute bottom-5 left-1/2 h-24 w-[78%] -translate-x-1/2 rounded-[50%] bg-blue-500 shadow-[0_28px_55px_rgba(37,99,235,0.35)]" />
+            <div className="absolute bottom-20 right-7 z-20 rounded-3xl bg-white p-7 text-center shadow-2xl shadow-blue-900/10">
+              <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-sky-100 text-4xl text-blue-600">
+                <IoWater />
+              </span>
+              <strong className="mt-5 block text-xl font-black text-slate-950">
+                Better Habits
+                <span className="block">Better You</span>
+              </strong>
+              <div className="mx-auto mt-5 h-2 w-28 rounded-full bg-blue-100">
+                <div className="h-full w-[62%] rounded-full bg-blue-600" />
+              </div>
+            </div>
 
-        {/* Right Image */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-          <img
-            src={homeImage}
-            alt="Mobile App"
-            className="w-[300px] sm:w-[180px] md:w-[220px] lg:w-[260px] drop-shadow-2xl"
-          />
+            <img
+              src={splashImage}
+              alt="DoraDrink app splash screen"
+              className="absolute bottom-11 left-1/2 z-10 h-[500px] -translate-x-1/2 rotate-[6deg] object-contain drop-shadow-[0_34px_44px_rgba(15,23,42,0.28)]"
+            />
 
+            <span className="absolute left-8 top-28 h-6 w-6 rounded-full border border-blue-400 bg-white/60" />
+            <span className="absolute right-10 top-20 h-5 w-5 rounded-full border border-blue-400 bg-white/60" />
+            <span className="absolute right-4 top-36 h-3 w-3 rounded-full border border-blue-300 bg-white/60" />
+          </div>
         </div>
       </div>
     </section>

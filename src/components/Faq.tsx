@@ -1,103 +1,153 @@
-import React from "react";
+import {
+  FaBell,
+  FaCloudArrowUp,
+  FaDroplet,
+  FaGear,
+  FaGift,
+  FaLock,
+  FaPlus,
+  FaShieldHalved,
+  FaTrashCan,
+  FaUser,
+} from "react-icons/fa6";
+import { FaBullseye } from "react-icons/fa";
 
 const faqs = [
-  // General
   {
     question: "What is DoraDrink?",
-    answer: "DoraDrink is a hydration tracking app designed to help you monitor and improve your daily water intake.",
+    answer:
+      "DoraDrink is a hydration tracking app designed to help you monitor and improve your daily water intake.",
+    icon: <FaDroplet />,
+    tone: "bg-blue-50 text-blue-600",
   },
   {
     question: "How does DoraDrink work?",
-    answer: "You log your water intake and DoraDrink tracks your progress toward your daily hydration goal.",
+    answer:
+      "You log your water intake and DoraDrink tracks your progress toward your daily hydration goal.",
+    icon: <FaGear />,
+    tone: "bg-emerald-50 text-emerald-600",
   },
   {
     question: "Is DoraDrink's tracking accurate?",
-    answer: "DoraDrink offers accurate tracking based on your input and recommended intake goals.",
+    answer:
+      "DoraDrink offers accurate tracking based on your input and recommended intake goals.",
+    icon: <FaBullseye />,
+    tone: "bg-violet-50 text-violet-600",
   },
   {
     question: "Is DoraDrink free to use?",
     answer: "Yes, DoraDrink is free with optional premium features in the future.",
+    icon: <FaGift />,
+    tone: "bg-amber-50 text-amber-600",
   },
   {
     question: "Can I export my DoraDrink data?",
     answer: "This feature will be available soon in settings.",
+    icon: <FaCloudArrowUp />,
+    tone: "bg-blue-50 text-blue-600",
   },
-
-  // Account
   {
     question: "How do I update my personal data?",
-    answer: "Go to Settings > Personal Information to update your age, weight, height, and other details.",
+    answer:
+      "Go to Settings > Personal Information to update your age, weight, height, and other details.",
+    icon: <FaUser />,
+    tone: "bg-teal-50 text-teal-600",
   },
   {
     question: "Can I reset my account data?",
-    answer: "Yes, you can reset all your data from Settings > Reset Data. This will erase all your water intake, reminders, and preferences.",
+    answer:
+      "Yes, you can reset all your data from Settings > Reset Data. This will erase all your water intake, reminders, and preferences.",
+    icon: <FaTrashCan />,
+    tone: "bg-rose-50 text-rose-500",
   },
   {
     question: "How do I change my password?",
-    answer: "Currently, DoraDrink does not require an account or password. All data is stored locally on your device.",
+    answer:
+      "Currently, DoraDrink does not require an account or password. All data is stored locally on your device.",
+    icon: <FaLock />,
+    tone: "bg-blue-50 text-blue-600",
   },
   {
     question: "Is my data private?",
-    answer: "Yes, your data is stored locally and is not shared with anyone. Please see our Privacy Policy for more details.",
+    answer:
+      "Yes, your data is stored locally and is not shared with anyone. Please see our Privacy Policy for more details.",
+    icon: <FaShieldHalved />,
+    tone: "bg-emerald-50 text-emerald-600",
   },
-
-  // Services
   {
     question: "Does DoraDrink send reminders?",
-    answer: "Yes, DoraDrink can send you hydration reminders based on your schedule. You can customize reminders in Settings > Reminder Settings.",
-  },
-  {
-    question: "How do I contact support?",
-    answer: "Go to Settings > Contact Support to reach out to our team via email.",
-  },
-  {
-    question: "Is there a premium version?",
-    answer: "All core features are free. Premium features may be introduced in the future.",
-  },
-
-  // Help
-  {
-    question: "The app crashes when I open it.",
-    answer: "Please try reinstalling the app. If the issue persists, contact Support.",
-  },
-  {
-    question: "I can't log my water intake.",
-    answer: "Make sure you have the latest version of DoraDrink. If the problem continues, contact Support.",
-  },
-  {
-    question: "Reminders are not working.",
-    answer: "Check your notification settings and ensure DoraDrink has permission to send notifications.",
-  },
-  {
-    question: "The app is slow or unresponsive.",
-    answer: "Try clearing the app cache or reinstalling DoraDrink. If issues persist, contact Support.",
+    answer:
+      "Yes, DoraDrink can send you hydration reminders based on your schedule. You can customize reminders in Settings > Reminder.",
+    icon: <FaBell />,
+    tone: "bg-violet-50 text-violet-600",
   },
 ];
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-        <p className="text-lg text-gray-600 mb-12">
-          Have questions about DoraDrink? Find answers here!
-        </p>
+    <section id="faq" className="bg-slate-50 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-white p-6 shadow-2xl shadow-blue-900/5 ring-1 ring-blue-50 sm:p-10 lg:p-14">
+        <div className="pointer-events-none absolute right-20 top-10 hidden h-56 w-56 rounded-full bg-blue-50 blur-2xl lg:block" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-          {faqs.map((faq, index) => (
-            <div key={index} className="flex items-start space-x-4">
-              <div className="flex-shrink-0 mt-1">
-                <span className="p-2 rounded-lg bg-blue-50 text-blue-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                    <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.404-.901 3.73-1.081 1.25-.176 2.457-.222 3.522-.164.84.045 1.583.167 2.186.326.386.103.687.35.836.72-.083.048-.156.096-.226.144-.823.57-1.745.922-2.825 1.056-1.25.158-2.455.086-3.52-.164-.84-.045-1.583-.167-2.186-.326-.386-.103-.687-.35-.836-.72z" clipRule="evenodd" />
-                  </svg>
-                </span>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900">{faq.question}</h4>
-                <p className="text-gray-600 mt-1">{faq.answer}</p>
-              </div>
+        <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-start">
+          <div>
+            <span className="inline-flex items-center gap-3 rounded-full bg-blue-50 px-4 py-2 text-sm font-extrabold uppercase tracking-wide text-blue-700 ring-1 ring-blue-100">
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-blue-600 text-white">
+                ?
+              </span>
+              FAQ
+            </span>
+
+            <h2 className="mt-6 text-4xl font-black leading-tight text-slate-950 sm:text-5xl">
+              Frequently Asked
+              <span className="block text-blue-600">Questions</span>
+            </h2>
+
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+              Have questions about DoraDrink? We've got you covered. Find
+              answers to the most common questions below.
+            </p>
+          </div>
+
+          <div className="relative hidden h-48 lg:block">
+            <div className="absolute right-28 top-4 h-32 w-40 rotate-[-5deg] rounded-[2rem] bg-blue-600 shadow-2xl shadow-blue-500/25">
+              <span className="grid h-full place-items-center text-7xl font-black text-white">
+                ?
+              </span>
+              <span className="absolute -bottom-5 left-10 h-10 w-10 rotate-45 rounded-br-xl bg-blue-600" />
             </div>
+            <div className="absolute right-0 top-16 h-28 w-40 rotate-[5deg] rounded-[1.75rem] bg-white shadow-2xl shadow-blue-900/10 ring-1 ring-blue-50">
+              <span className="grid h-full place-items-center text-5xl font-black text-blue-500">
+                ...
+              </span>
+              <span className="absolute -bottom-4 right-10 h-8 w-8 rotate-45 rounded-br-xl bg-white ring-1 ring-blue-50" />
+            </div>
+            <span className="absolute right-80 top-8 h-4 w-3 rotate-[-35deg] rounded-full bg-blue-500" />
+            <span className="absolute right-72 top-2 h-9 w-2 rotate-[-25deg] rounded-full bg-blue-500" />
+          </div>
+        </div>
+
+        <div className="relative z-10 mt-9 grid gap-4 lg:grid-cols-2">
+          {faqs.map((faq) => (
+            <article
+              key={faq.question}
+              className="flex items-center gap-5 rounded-2xl border border-blue-50 bg-white p-5 shadow-lg shadow-blue-900/5"
+            >
+              <span className={`grid h-16 w-16 shrink-0 place-items-center rounded-full text-2xl shadow-lg shadow-slate-900/5 ${faq.tone}`}>
+                {faq.icon}
+              </span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-lg font-black text-slate-950">{faq.question}</h3>
+                <p className="mt-1 text-sm leading-6 text-slate-600">{faq.answer}</p>
+              </div>
+              <button
+                type="button"
+                aria-label={`Expand ${faq.question}`}
+                className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-blue-100 text-blue-600 transition hover:bg-blue-50"
+              >
+                <FaPlus />
+              </button>
+            </article>
           ))}
         </div>
       </div>

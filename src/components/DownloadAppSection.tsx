@@ -1,92 +1,227 @@
-import React from 'react';
-import { FaDesktop, FaApple, FaGooglePlay, FaDownload } from 'react-icons/fa';
+import homeImage from "../assets/hydrationgoal.png";
+import splashImage from "../assets/splash2.png";
+import {
+  FaApple,
+  FaBell,
+  FaChartLine,
+  FaDownload,
+  FaGooglePlay,
+  FaShieldHalved,
+  FaStar,
+  FaUsers,
+} from "react-icons/fa6";
+import { IoWater } from "react-icons/io5";
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6752671109";
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.doradrinkwaterreminderapp";
 
+const benefits = [
+  {
+    icon: <FaBell />,
+    title: "Smart Reminders",
+    copy: "Never miss a sip",
+    color: "bg-blue-50 text-blue-600",
+  },
+  {
+    icon: <FaChartLine />,
+    title: "Track Progress",
+    copy: "See your daily stats",
+    color: "bg-blue-50 text-blue-600",
+  },
+  {
+    icon: <IoWater />,
+    title: "Healthy Habits",
+    copy: "Build a better you",
+    color: "bg-blue-50 text-blue-600",
+  },
+];
+
+const openStore = (url: string) => window.open(url, "_blank", "noopener,noreferrer");
+
+const AppStoreButton = () => (
+  <button
+    onClick={() => openStore(APP_STORE_URL)}
+    className="flex h-14 w-48 items-center justify-center gap-3 rounded-lg bg-black text-white shadow-lg transition hover:bg-slate-800"
+  >
+    <FaApple className="text-3xl" />
+    <span className="text-left leading-none">
+      <span className="block text-[11px]">Download on the</span>
+      <span className="block text-xl font-semibold">App Store</span>
+    </span>
+  </button>
+);
+
+const PlayStoreButton = () => (
+  <button
+    onClick={() => openStore(PLAY_STORE_URL)}
+    className="flex h-14 w-48 items-center justify-center gap-3 rounded-lg bg-black text-white shadow-lg transition hover:bg-slate-800"
+  >
+    <FaGooglePlay className="text-2xl text-emerald-400" />
+    <span className="text-left leading-none">
+      <span className="block text-[11px] uppercase">Get it on</span>
+      <span className="block text-lg font-semibold">Google Play</span>
+    </span>
+  </button>
+);
+
 const AppDownloadSection = () => {
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto text-center">
-        {/* Top Section */}
-        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
-          Download DoraDrink <br /> and Stay Hydrated
-        </h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Get our app on your mobile device to receive daily reminders and track your water intake.
-        </p>
+    <section className="relative overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-sky-50/80 to-white" />
 
-        <a
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div>
+            <span className="inline-flex items-center gap-3 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-extrabold uppercase tracking-wide text-blue-700 shadow-sm">
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-blue-600 text-white">
+                <FaDownload className="text-xs" />
+              </span>
+              Get the app
+            </span>
 
-          className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors mb-16"
-        >
-          <FaDownload className="mr-3 h-5 w-5" />
-          Download Now
-        </a>
+            <h2 className="mt-8 text-4xl font-black leading-tight text-slate-950 sm:text-5xl lg:text-6xl">
+              Download DoraDrink and{" "}
+              <span className="text-blue-600">Stay Hydrated</span>
+            </h2>
 
-        {/* Download Cards Grid */}
-        <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto justify-center">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
+              Stay on track with your hydration goals, get smart reminders, and
+              build healthy habits every day.
+            </p>
 
-          {/* iOS Card */}
-          <div className="bg-white text-gray-800 rounded-2xl p-8 flex flex-col justify-between items-start text-left shadow-lg border border-gray-100">
-            <FaApple className="h-10 w-10 mb-6 text-gray-500" />
-            <div>
-              <p className="text-sm text-gray-500">Mobile Phone</p>
-              <h2 className="text-3xl font-bold mb-3">iOS</h2>
-              <p className="text-sm text-gray-600 mb-8">
-                Manage your hydration goals and get smart reminders right on your iPhone
-              </p>
+            <div className="mt-10 grid gap-5 sm:grid-cols-3">
+              {benefits.map((item) => (
+                <div key={item.title} className="flex items-center gap-4">
+                  <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-full text-2xl ${item.color}`}>
+                    {item.icon}
+                  </span>
+                  <div>
+                    <h3 className="text-base font-black text-slate-950">{item.title}</h3>
+                    <p className="mt-1 text-sm text-slate-600">{item.copy}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div 
-            onClick={() => window.open(APP_STORE_URL, "_blank")}
-            className="flex mt-3 w-48 h-14 bg-black text-white rounded-xl items-center justify-center cursor-pointer hover:bg-gray-800 transition ">
-              <div className="mr-3">
-                <svg viewBox="0 0 384 512" width="30">
-                  <path
-                    fill="currentColor"
-                    d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <div className="text-xs group-hover:text-blue-600 transition">Download on the</div>
-                <div className="text-2xl font-semibold font-sans -mt-1 group-hover:text-blue-600 transition">App Store</div>
-              </div>
-            </div>
-
           </div>
 
-          {/* Android Card */}
-          <div className="bg-white text-gray-800 rounded-2xl p-8 flex flex-col justify-between items-start text-left shadow-lg border border-gray-100">
-            <FaGooglePlay className="h-10 w-10 mb-6 text-gray-500" />
-            <div>
-              <p className="text-sm text-gray-500">Mobile Phone</p>
-              <h2 className="text-3xl font-bold mb-3">Android</h2>
-              <p className="text-sm text-gray-600 mb-8">
-                Track your water intake and meet your daily goals with our easy-to-use Android app.
-              </p>
-            </div>
+          <div className="relative mx-auto h-[410px] w-full max-w-2xl">
+            <div className="absolute left-1/2 top-4 h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-blue-100/80" />
+            <div className="absolute bottom-16 left-1/2 h-36 w-[78%] -translate-x-1/2 rounded-[50%] bg-blue-100 blur-2xl" />
+            <div className="absolute bottom-10 left-1/2 h-44 w-[88%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(circle,#dbeafe_0,#eff6ff_60%,transparent_70%)]" />
 
-            <div 
-             onClick={() => window.open(PLAY_STORE_URL, "_blank")}
-            className="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center hover:bg-gray-800 transition cursor-pointer">
-              <div className="mr-3">
-                <svg viewBox="30 336.7 120.9 129.2" width="30">
-                  <path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z" />
-                  <path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z" />
-                  <path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z" />
-                  <path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z" />
-                </svg>
-              </div>
+            <img
+              src={splashImage}
+              alt="DoraDrink app on phone"
+              className="absolute bottom-6 left-1/2 z-20 h-[390px] -translate-x-1/2 rotate-[6deg] object-contain drop-shadow-[0_30px_42px_rgba(15,23,42,0.24)]"
+            />
+
+            <div className="absolute bottom-14 left-10 h-24 w-40 rotate-[-16deg] rounded-[50%] border-b-[18px] border-blue-400/50" />
+            <div className="absolute bottom-20 right-9 h-28 w-48 rotate-[12deg] rounded-[50%] border-b-[18px] border-blue-400/50" />
+            <span className="absolute bottom-32 left-12 h-4 w-4 rounded-full border border-blue-400 bg-white/60" />
+            <span className="absolute right-16 top-20 h-3 w-3 rounded-full border border-blue-400 bg-white/60" />
+            <span className="absolute right-28 top-12 h-5 w-5 rounded-full border border-blue-300 bg-white/60" />
+            <span className="absolute right-6 top-28 h-12 w-7 rotate-[35deg] rounded-full bg-green-500/80" />
+            <span className="absolute left-20 bottom-28 h-10 w-6 rotate-[-55deg] rounded-full bg-green-500/80" />
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <article className="relative min-h-[21rem] overflow-hidden rounded-3xl border border-blue-200 bg-gradient-to-br from-white via-white to-blue-50 p-6 shadow-xl shadow-blue-900/5 sm:p-8">
+            <div className="absolute bottom-0 right-0 h-40 w-72 rounded-tl-full bg-blue-100/80" />
+            <div className="relative z-10 grid h-full gap-6 sm:grid-cols-[0.9fr_1.1fr]">
               <div>
-                <div className="text-xs group-hover:text-blue-600 transition">GET IT ON</div>
-                <div className="text-xl font-semibold font-sans -mt-1 group-hover:text-blue-600 transition">Google Play</div>
+                <div className="flex items-center gap-5">
+                  <span className="grid h-16 w-16 place-items-center rounded-2xl bg-blue-600 text-4xl text-white shadow-lg shadow-blue-500/25">
+                    <FaApple />
+                  </span>
+                  <span className="rounded-full bg-blue-50 px-5 py-2 text-sm font-extrabold text-blue-600">
+                    For iPhone
+                  </span>
+                </div>
+
+                <h3 className="mt-7 text-4xl font-black text-slate-950">iOS</h3>
+                <p className="mt-4 max-w-sm text-base leading-7 text-slate-700">
+                  Manage your hydration goals and get smart reminders right on your iPhone.
+                </p>
+                <div className="mt-8">
+                  <AppStoreButton />
+                </div>
+              </div>
+
+              <div className="relative min-h-[18rem] overflow-hidden">
+                <img
+                  src={homeImage}
+                  alt="DoraDrink iOS app preview"
+                  className="absolute -bottom-28 left-1/2 h-[400px] -translate-x-1/2 object-contain drop-shadow-2xl"
+                />
               </div>
             </div>
+          </article>
 
+          <article className="relative min-h-[21rem] overflow-hidden rounded-3xl border border-emerald-200 bg-gradient-to-br from-white via-white to-emerald-50 p-6 shadow-xl shadow-blue-900/5 sm:p-8">
+            <div className="absolute bottom-0 right-0 h-40 w-72 rounded-tl-full bg-emerald-100/80" />
+            <div className="relative z-10 grid h-full gap-6 sm:grid-cols-[0.9fr_1.1fr]">
+              <div>
+                <div className="flex items-center gap-5">
+                  <span className="grid h-16 w-16 place-items-center rounded-2xl bg-white text-4xl shadow-lg shadow-blue-900/5">
+                    <FaGooglePlay className="text-emerald-500" />
+                  </span>
+                  <span className="rounded-full bg-emerald-50 px-5 py-2 text-sm font-extrabold text-emerald-600">
+                    For Android
+                  </span>
+                </div>
 
+                <h3 className="mt-7 text-4xl font-black text-slate-950">Android</h3>
+                <p className="mt-4 max-w-sm text-base leading-7 text-slate-700">
+                  Track your water intake and meet your daily goals with our easy-to-use Android app.
+                </p>
+                <div className="mt-8">
+                  <PlayStoreButton />
+                </div>
+              </div>
 
+              <div className="relative min-h-[18rem] overflow-hidden">
+                <img
+                  src={homeImage}
+                  alt="DoraDrink Android app preview"
+                  className="absolute -bottom-28 left-1/2 h-[400px] -translate-x-1/2 rotate-[3deg] object-contain drop-shadow-2xl"
+                />
+              </div>
+            </div>
+          </article>
+        </div>
 
+        <div className="mt-6 grid gap-5 rounded-3xl border border-blue-50 bg-sky-50/50 p-5 shadow-lg shadow-blue-900/5 md:grid-cols-2">
+          <div className="flex items-center gap-5 md:justify-center">
+            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-blue-100 text-2xl text-blue-600">
+              <FaShieldHalved />
+            </span>
+            <div>
+              <h3 className="text-base font-black text-slate-950">Your data is private and secure</h3>
+              <p className="mt-1 text-sm text-slate-600">We respect your privacy. All data is stored securely on your device.</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-5 md:justify-center">
+            <div className="flex -space-x-3">
+              {Array.from({ length: 5 }).map((_, index) => (
+                <span
+                  key={index}
+                  className="grid h-9 w-9 place-items-center rounded-full border-2 border-sky-50 bg-blue-100 text-blue-600"
+                >
+                  <FaUsers className="text-sm" />
+                </span>
+              ))}
+            </div>
+            <div>
+              <h3 className="text-base font-black text-slate-950">Loved by thousands of users</h3>
+              <div className="mt-1 flex items-center gap-1 text-amber-400">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <FaStar key={index} />
+                ))}
+                <span className="ml-2 text-sm font-medium text-slate-600">4.9/5</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
